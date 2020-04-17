@@ -40,7 +40,6 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "json-server": "^0.15.0"
-  }
+  },
   "proxy": "http://localhost:5000"
-
 }
