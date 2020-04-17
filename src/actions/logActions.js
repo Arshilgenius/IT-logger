@@ -75,7 +75,7 @@ export const deleteLog = (id) => async (dispatch) => {
   try {
     setLoading();
 
-    await fetch(`/logs/${id}`, {
+    await fetch(`https://itloggerapi.herokuapp.com/logs/${id}`, {
       method: "DELETE",
     });
 
