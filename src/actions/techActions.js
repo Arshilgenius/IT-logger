@@ -11,9 +11,7 @@ export const getTechs = () => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch(
-      "https://dashboard.heroku.com/apps/itloggerapi/techs"
-    );
+    const res = await fetch("https://itloggerapi.herokuapp.com/techs");
     const data = await res.json();
 
     dispatch({
@@ -33,16 +31,13 @@ export const addTech = (tech) => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch(
-      "https://dashboard.heroku.com/apps/itloggerapi/techs",
-      {
-        method: "POST",
-        body: JSON.stringify(tech),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch("https://itloggerapi.herokuapp.com/techs", {
+      method: "POST",
+      body: JSON.stringify(tech),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await res.json();
 
     dispatch({
@@ -61,7 +56,7 @@ export const deleteTech = (id) => async (dispatch) => {
   try {
     setLoading();
 
-    await fetch(`https://dashboard.heroku.com/apps/itloggerapi/techs/${id}`, {
+    await fetch(`https://itloggerapi.herokuapp.com/techs/${id}`, {
       method: "DELETE",
     });
 
